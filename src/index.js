@@ -1,5 +1,3 @@
 import CrissCross from './CrissCross';
 
-const crissCross = new CrissCross();
-
-export default crissCross;
+export default new CrissCross();

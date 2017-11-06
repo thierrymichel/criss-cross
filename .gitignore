@@ -101,6 +101,8 @@ Temporary Items
 ### Custom ###
 /.nyc_output
 /coverage
+/dist
+/es
 /lib
 /.npmignore
 /NOTES.md
