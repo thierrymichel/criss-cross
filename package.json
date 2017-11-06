@@ -1,0 +1,59 @@
+{
+  "name": "criss-cross",
+  "version": "0.0.1",
+  "description": "A simple and fast API to manage viewport and  DOM elements intersections as you scroll",
+  "homepage": "https://github.com/thierrymichel/criss-cross#readme",
+  "main": "lib/index.js",
+  "browser": "./lib/criss-cross.min.js",
+  "scripts": {
+    "clean": "rm -rf lib/*",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "filesize": "gzip-size lib/criss-cross.min.js",
+    "lint": "eslint src/** || exit 0",
+    "minify": "uglifyjs -o ./lib/criss-cross.min.js ./lib/index.js",
+    "test:watch": "ava -v -w --color",
+    "webpack": "webpack --progress --profile",
+    "webpack:watch": "webpack --watch",
+    "prepublish": "npm run build",
+    "start": "npm-run-all lint clean webpack:watch",
+    "dev": "npm-run-all lint clean --parallel webpack:watch test:watch",
+    "build": "npm-run-all lint clean webpack minify",
+    "test": "nyc ava -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://github.com/thierrymichel/criss-cross.git"
+  },
+  "keywords": [
+    "scroll",
+    "sticky",
+    "viewport",
+    "dom",
+    "intersection",
+    "observer"
+  ],
+  "author": {
+    "name": "Thierry Michel",
+    "email": "thmichel@gmail.com",
+    "url": "http://thierrymichel.net/"
+  },
+  "license": "SEE LICENSE IN UNLICENSE",
+  "bugs": {
+    "url": "https://github.com/thierrymichel/criss-cross/issues"
+  },
+  "devDependencies": {
+    "ava": "0.23.0",
+    "babel-core": "6.26.0",
+    "babel-eslint": "8.0.1",
+    "babel-loader": "7.1.2",
+    "babel-preset-env": "1.6.1",
+    "babel-register": "6.26.0",
+    "coveralls": "3.0.0",
+    "eslint": "4.10.0",
+    "eslint-plugin-ava": "4.2.2",
+    "gzip-size-cli": "2.1.0",
+    "npm-run-all": "4.1.1",
+    "nyc": "11.3.0",
+    "uglify-js": "3.1.7"
+  }
+}
