@@ -23,3 +23,9 @@ watcher.enterViewport(() => {
   }
 });
 ```
+
+---
+
+```html
+<script src="https://unpkg.com/criss-cross"></script>
+```
