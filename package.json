@@ -1,7 +1,7 @@
 {
   "name": "criss-cross",
   "version": "0.0.1",
-  "description": "A simple and fast API to manage viewport and  DOM elements intersections as you scroll",
+  "description": "A simple and fast API to manage viewport and DOM elements intersections as you scroll",
   "homepage": "https://github.com/thierrymichel/criss-cross#readme",
   "main": "lib/index.js",
   "module": "es/index.js",
