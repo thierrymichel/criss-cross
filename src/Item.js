@@ -138,7 +138,7 @@ class Item {
 
     if (callbacks[type].length > 0) {
       callbacks[type].forEach(callback => {
-        callback.cb();
+        callback.cb(this);
 
         if (callback.one) {
           this.off(type, callback.cb);
