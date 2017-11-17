@@ -98,9 +98,9 @@ export default class CrissCross {
         return item.$el === entry.target;
       });
 
-      item.isBeforeViewport = entry.boundingClientRect.y < entry.rootBounds.y;
-      item.isAfterViewport = entry.boundingClientRect.y + entry.boundingClientRect.height >
-      entry.rootBounds.y + entry.rootBounds.height;
+      item.isBeforeViewport = entry.boundingClientRect.top < entry.rootBounds.top;
+      item.isAfterViewport = entry.boundingClientRect.top + entry.boundingClientRect.height >
+      entry.rootBounds.top + entry.rootBounds.height;
 
       if (entry.isIntersecting) {
         item.isInViewport = true;

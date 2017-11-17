@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.0.4] - 2017-11-17
+
+### Fixed
+
+- Replace `y` by `top` (Safari, Chrome mobile, …)
+
 ## [0.0.3] - 2017-11-07
 
 ### Added
