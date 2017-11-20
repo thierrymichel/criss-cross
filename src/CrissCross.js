@@ -45,7 +45,7 @@ export default class CrissCross {
   update(item, {
     offset = 0,
     root = null,
-  } = {}) {
+  } = {}, force = false) {
     item.pause();
     this._destroyObserver(item.observer);
 
@@ -53,7 +53,7 @@ export default class CrissCross {
     const observer = this._createObserver(options);
 
     item.observer = observer;
-    item.update();
+    item.update(force);
   }
 
   destroy() {

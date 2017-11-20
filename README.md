@@ -103,7 +103,7 @@ Other values (HTMLElement) should be parent of `target`.
 
 Kills everything…
 
-### update(watchItem, [options])
+### update(watchItem, [options, force])
 
 #### target
 
@@ -116,6 +116,13 @@ The watchItem you want to update the observer.
 Type: `Object`
 
 Same as `create()` options parameter…
+
+#### force
+
+Type: `Boolean`
+Default: `false`
+
+Force `was…` properties to be resetted to `undefined`
 
 ---
 

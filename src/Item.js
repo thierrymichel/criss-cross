@@ -45,13 +45,14 @@ class Item {
     this.observe();
   }
 
-  update() {
+  update(force) {
     if (this.isLocked) {
       this.$ghost.style.height = `${$outerHeight(this.$el)}px`;
     }
 
-    // !DEV to be tested deeper
-    // this.wasInViewport = undefined;
+    if (force) {
+      this.wasInViewport = undefined;
+    }
     this.isInViewport = false;
     this.isFullyInViewport = false;
     this.isBeforeViewport = false;
