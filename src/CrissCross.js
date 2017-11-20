@@ -33,7 +33,42 @@ export default class CrissCross {
       throw new Error('[🎤 criss-cross] Invalid target. Should be a child of root.');
     }
 
-    this.options = {
+    const options = CrissCross._setOptions(offset, root);
+    const observer = this._createObserver(options);
+    const item = this._createItem($el, observer);
+
+    item.init();
+
+    return item;
+  }
+
+  update(item, {
+    offset = 0,
+    root = null,
+  } = {}) {
+    item.pause();
+    this._destroyObserver(item.observer);
+
+    const options = CrissCross._setOptions(offset, root);
+    const observer = this._createObserver(options);
+
+    item.observer = observer;
+    item.resume();
+  }
+
+  destroy() {
+    const items = _items.get(this);
+    const observers = _observers.get(this);
+
+    items.length = 0;
+    observers.forEach(observer => {
+      observer.disconnect();
+    });
+    observers.length = 0;
+  }
+
+  static _setOptions(offset, root) {
+    const options = {
       root: null,
       rootMargin: '0px 0px 0px 0px',
       // !DEV
@@ -46,40 +81,14 @@ export default class CrissCross {
       const top = offset.top || 0;
       const bottom = offset.bottom || 0;
 
-      this.options.rootMargin = `${top}px 0px ${bottom}px 0px`;
+      options.rootMargin = `${top}px 0px ${bottom}px 0px`;
     } else {
-      this.options.rootMargin = `${offset}px 0px ${offset}px 0px`;
+      options.rootMargin = `${offset}px 0px ${offset}px 0px`;
     }
 
-    this.options.root = root;
+    options.root = root;
 
-    const observer = this._createObserver(this.options);
-    const item = this._createItem($el, observer);
-
-    item.init();
-
-    return item;
-  }
-
-  // !DEV
-  // May be not needed?
-  // update() {
-  //   const items = _items.get(this);
-
-  //   items.forEach(item => {
-  //     item.update();
-  //   });
-  // }
-
-  destroy() {
-    const items = _items.get(this);
-    const observers = _observers.get(this);
-
-    items.length = 0;
-    observers.forEach(observer => {
-      observer.disconnect();
-    });
-    observers.length = 0;
+    return options;
   }
 
   _intersected(entries, observer) {

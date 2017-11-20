@@ -46,13 +46,6 @@ class Item {
     this.manager._destroyItem(this);
   }
 
-  // !DEV
-  // May be not needed?
-  // update() {
-  //   this.pause();
-  //   this.resume();
-  // }
-
   lock() {
     if (this.isLocked) {
       return;

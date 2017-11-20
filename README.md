@@ -103,6 +103,20 @@ Other values (HTMLElement) should be parent of `target`.
 
 Kills everything…
 
+### update(watchItem, [options])
+
+#### target
+
+Type: `Item`
+
+The watchItem you want to update the observer.
+
+#### options
+
+Type: `Object`
+
+Same as `create()` options parameter…
+
 ---
 
 ## watchItem
