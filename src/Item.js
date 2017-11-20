@@ -50,7 +50,8 @@ class Item {
       this.$ghost.style.height = `${$outerHeight(this.$el)}px`;
     }
 
-    this.wasInViewport = undefined;
+    // !DEV to be tested deeper
+    // this.wasInViewport = undefined;
     this.isInViewport = false;
     this.isFullyInViewport = false;
     this.isBeforeViewport = false;
