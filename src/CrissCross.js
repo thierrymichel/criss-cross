@@ -53,7 +53,7 @@ export default class CrissCross {
     const observer = this._createObserver(options);
 
     item.observer = observer;
-    item.resume();
+    item.update();
   }
 
   destroy() {

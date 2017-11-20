@@ -30,6 +30,10 @@ class Item {
   }
 
   init() {
+    this.observe();
+  }
+
+  observe() {
     this.observer.observe(this.target);
   }
 
@@ -38,7 +42,21 @@ class Item {
   }
 
   resume() {
-    this.init();
+    this.observe();
+  }
+
+  update() {
+    if (this.isLocked) {
+      this.$ghost.style.height = `${$outerHeight(this.$el)}px`;
+    }
+
+    this.wasInViewport = undefined;
+    this.isInViewport = false;
+    this.isFullyInViewport = false;
+    this.isBeforeViewport = false;
+    this.isAfterViewport = false;
+
+    this.observe();
   }
 
   destroy() {
