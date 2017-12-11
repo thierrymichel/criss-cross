@@ -15,7 +15,7 @@ Inspired by [scrollmonitor](https://www.npmjs.com/package/scrollmonitor) from [@
 ## Install
 
 ```sh
-npm install cross-criss --save-dev
+npm install criss-cross --save-dev
 ```
 
 ## Usage
