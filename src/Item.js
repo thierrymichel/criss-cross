@@ -4,7 +4,7 @@ import {
   $insertAfter,
 } from './dom';
 
-const eventTypes = Object.values(events);
+const eventTypes = Object.keys(events).map(key => events[key]);
 const _callbacks = new WeakMap();
 
 class Item {
